@@ -60,8 +60,10 @@ hr {
 
 <script>
 // Set the date we're counting down to
-var countDownDate = new Date("May 12, 2017 15:37:25").getTime();
-
+var date = new Date("May 12, 2017 15:37:25")
+var countDownDate = date.getTime() + (date.getTimezoneOffset()*60*1000);
+//var countDownDate = new Date(new Date.UTC(2017,)).getTime();
+    
 // Update the count down every 1 second
 var countdownfunction = setInterval(function() {
 
