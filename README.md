@@ -1,2 +1,2 @@
 # CABowers.github.io
-[Personal Website](cabowers.github.io)
+[Personal Website](http://cabowers.github.io)
