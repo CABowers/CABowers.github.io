@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                slackSend color: 'good', message: "Test for Slack Jenkins plugin"
+                // slackSend color: 'good', message: "Test for Slack Jenkins plugin"
                 echo 'Building...'
             }
         }
