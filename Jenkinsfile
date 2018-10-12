@@ -4,33 +4,19 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                try {
-                    throw any // Fail build
-                    // echo 'Building..'
-
-                    currentBuild.result = "SUCCESS"
-                    echo "Previous build result: ${currentBuild.previousBuild.result}"
-                    if (currentBuild.previousBuild.result != null && currentBuild.previousBuild.result.equals("FAILURE")) {
-                        slackSend color: 'good', message: "yana build on branch ${env.BRANCH_NAME} back to normal"
-                        notifyStatus("👌")
-                    }
-                } catch (any) {
-                    currentBuild.result = "FAILURE"
-                    slackSend color: 'danger', message: "yana build failed on branch ${env.BRANCH_NAME}"
-                    notifyStatus("😿")
-                    throw any
-                }
+                slackSend color: 'good', message: "Test for Slack Jenkins plugin"
+                echo 'Building...'
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                echo 'Testing...'
                 //error("Fail test")
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                echo 'Deploying...'
                 // error("Fail deploy")
             }
         }
