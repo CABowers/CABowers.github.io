@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 try {
-                    throw RuntimeException("Fail Build")
+                    throw any // Fail build
                     // echo 'Building..'
 
                     currentBuild.result = "SUCCESS"
