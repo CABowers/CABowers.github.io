@@ -4,18 +4,20 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                // echo 'Building..'
+                error("Fail Build")
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                // echo 'Testing..'
                 error("Fail test")
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                // echo 'Deploying....'
+                error("Fail deploy")
             }
         }
     }
